@@ -1,0 +1,25 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#main-content {
+    text-align: center;
+}
+h1 {
+    color: rgb(33, 106, 241);
+    font-size: 45px;
+}
+#projects-main {
+    display: inline-block;
+    width: 550px;
+    height: auto;
+}
+#projects-title {
+    display: flex;
+    justify-content: space-between;
+}
+.add-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    text-align: center;
+}

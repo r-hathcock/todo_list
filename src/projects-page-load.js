@@ -1,0 +1,29 @@
+// renders main home page to display projects
+const loadProjectsPage = () => {
+    let pageTitle = document.createElement('h1');
+    pageTitle.innerText = 'ToDo List';
+
+    let projectsTitle = document.createElement('h2');
+    projectsTitle.innerText = 'Projects';
+
+    let projectsAddButton = document.createElement('button');
+    projectsAddButton.setAttribute('class', 'add-btn');
+    projectsAddButton.setAttribute('id', 'projects-add-btn');
+    projectsAddButton.innerText = '+';
+    
+    // append elements to main node
+    let projectsTitleContainer = document.createElement('div');
+    projectsTitleContainer.appendChild(projectsTitle);
+    projectsTitleContainer.appendChild(projectsAddButton);
+    projectsTitleContainer.setAttribute('id', 'projects-title');
+
+    let projectsMainContainer = document.createElement('div');
+    projectsMainContainer.appendChild(pageTitle);
+    projectsMainContainer.appendChild(projectsTitleContainer);
+    projectsMainContainer.setAttribute('id', 'projects-main');
+
+    const mainNode = document.getElementById('main-content');
+    mainNode.appendChild(projectsMainContainer);
+};
+
+export {loadProjectsPage};
