@@ -1,3 +1,6 @@
-import {loadProjectsPage} from './projects-page-load';
+import {loadProjectPage} from './projects-page-load';
 
-loadProjectsPage();
+let projectList = [];
+
+
+loadProjectPage(projectList);
