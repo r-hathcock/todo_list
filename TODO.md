@@ -1,20 +1,12 @@
-[] render projects page module
-[] render tasks page module
-[] task object
-[] project object
-    [] array of tasks
-[] delete
-    [] delete project
-        [] remove from array
-        [] render projects page
-    [] delete task
-        [] remove from project array
-        [] render tasks page
-[] add project
-    [] modal to retrieve info
-    [] push to main project array
-[] add task
-    [] modal to retrieve info
-    [] create new task
-    [] push to project
-[] styles
+[] load project page
+    [x] add button
+    [x] prompt modal 
+    [x] store input into new project object
+    [] send project to project list
+    [] render project list into project cards
+    [] delete project function
+[] load task page
+    [] when clicked on project load task page
+    [] 
+
+

@@ -1,4 +1,4 @@
-import {Project} from './projects';
+import {addProjectToList} from './project-add-to-list';
 
 // modal to prompt user for data
 const projectModal = () => {
@@ -11,8 +11,7 @@ const projectModal = () => {
     projModal.style.display = 'block';
 
     addProjBtn.onclick = () => {
-        var newProj = new Project(titleInput.value, 0);
-        alert(newProj.name);
+        addProjectToList(titleInput, 0);
         titleInput.value = '';
         projModal.style.display = 'none';
     }

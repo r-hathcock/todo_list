@@ -1,6 +1,5 @@
 import {loadProjectPage} from './projects-page-load';
 
-let projectList = [];
-
+var projectList = [];
 
 loadProjectPage(projectList);

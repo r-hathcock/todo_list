@@ -2,7 +2,7 @@ import {loadProjectCards} from './projects-card-load';
 import {projectModal} from './project-modal';
 
 // renders main home page to display projects
-const loadProjectPage = () => {
+const loadProjectPage = (projectList) => {
     let pageTitle = document.createElement('h1');
     pageTitle.innerText = 'ToDo List';
 
@@ -21,9 +21,13 @@ const loadProjectPage = () => {
     projectsTitleContainer.appendChild(projectsAddButton);
     projectsTitleContainer.setAttribute('id', 'projects-title');
 
+    let projectCardsContainer = document.createElement('div');
+    projectCardsContainer.setAttribute('id', 'project-card-container');
+
     let projectsMainContainer = document.createElement('div');
     projectsMainContainer.appendChild(pageTitle);
     projectsMainContainer.appendChild(projectsTitleContainer);
+    projectsMainContainer.appendChild(projectCardsContainer);
     projectsMainContainer.setAttribute('id', 'projects-main');
 
     const mainNode = document.getElementById('main-content');

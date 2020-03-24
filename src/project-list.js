@@ -1,3 +1,3 @@
-function addToProjectList(projectList) {
-    
-};
+let projectList = [];
+
+export {projectList};
