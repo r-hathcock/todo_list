@@ -2,7 +2,7 @@ import {loadProjectCards} from './projects-card-load';
 import {projectModal} from './project-modal';
 
 // renders main home page to display projects
-const loadProjectPage = (projectList) => {
+const loadProjectPage = () => {
     let pageTitle = document.createElement('h1');
     pageTitle.innerText = 'ToDo List';
 
