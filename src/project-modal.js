@@ -11,7 +11,7 @@ const projectModal = () => {
     projModal.style.display = 'block';
 
     addProjBtn.onclick = () => {
-        addProjectToList(titleInput, 0);
+        addProjectToList(titleInput);
         titleInput.value = '';
         projModal.style.display = 'none';
     }
