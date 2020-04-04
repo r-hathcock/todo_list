@@ -1,7 +1,7 @@
 import {loadProjectCards} from './projects-card-load';
 import {projectModal} from './project-modal';
 
-// renders main home page to display projects
+// renders main home page to display title and projects
 const loadProjectPage = () => {
     let pageTitle = document.createElement('h1');
     pageTitle.innerText = 'ToDo List';
@@ -9,6 +9,7 @@ const loadProjectPage = () => {
     let projectsTitle = document.createElement('h2');
     projectsTitle.innerText = 'Projects';
 
+    // loads modal to retrieve user input
     let projectsAddButton = document.createElement('button');
     projectsAddButton.setAttribute('class', 'add-btn');
     projectsAddButton.setAttribute('id', 'projects-add-btn');

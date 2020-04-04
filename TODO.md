@@ -6,9 +6,12 @@
     [x] render project list into project cards
     [x] assign data id
     [] event listener to open task page for respective card
-    [] delete project function
+    [x] delete project function
 [] load task page
-    [] when clicked on project load task page
-    [] 
+    [] load task page
+    [] render tasks 
+    [] add task
+    [] delete task
+    [] back btn(load projects page)
 
 

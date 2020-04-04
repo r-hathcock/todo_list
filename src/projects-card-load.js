@@ -1,9 +1,10 @@
-import {projectList} from './project-list';
+import {retrieveProjectListLS} from './project-list';
 import {createProjectCard} from './create-project-card';
 
 // renders list of projects into seperate 'cards'
 const loadProjectCards = () => {
     const projectCardContainer = document.getElementById('project-card-container');
+    let projectList = retrieveProjectListLS();
 
     // clear current display
     while (projectCardContainer.firstChild) {

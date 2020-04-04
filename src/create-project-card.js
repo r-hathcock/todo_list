@@ -1,9 +1,10 @@
-import {projectList} from './project-list';
+import {retrieveProjectListLS} from './project-list';
 import {deleteProject} from './delete-project';
 
 const createProjectCard = (listIndex) => {
     const mainProjectsNode = document.getElementById('projects-main');
     const projectCardContainer = document.getElementById('project-card-container');
+    let projectList = retrieveProjectListLS();
     
     let projectCard = document.createElement('div');
     projectCard.setAttribute('class', 'project-cards');
@@ -22,8 +23,6 @@ const createProjectCard = (listIndex) => {
 
     projectCardContainer.appendChild(projectCard);
     mainProjectsNode.appendChild(projectCardContainer);
-
-
 }
 
 export {createProjectCard};
