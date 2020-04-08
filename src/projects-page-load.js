@@ -36,6 +36,6 @@ const loadProjectPage = () => {
 
     // render list of projects
     loadProjectCards();
-};
+}
 
 export {loadProjectPage};
