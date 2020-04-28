@@ -9,12 +9,13 @@
     [x] delete project function
     [x] localstorage functionality
     [x] prompt user when deleting
-    [] style
 [] load task page
-    [] load task page
-    [] render tasks 
-    [] add task
-    [] delete task
+    [x] load task page
+    [] render task cards
+    [] add task button
+    [] add task modal
+    [] delete task button
     [] back btn(load projects page)
+[] styles
 
 

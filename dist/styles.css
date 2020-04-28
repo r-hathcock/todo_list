@@ -8,12 +8,14 @@ h1 {
     color: rgb(33, 106, 241);
     font-size: 35px;
 }
-#projects-main {
+#projects-main,
+#task-main {
     display: inline-block;
     width: 550px;
     height: auto;
 }
-#projects-title {
+#projects-title,
+#task-title {
     display: flex;
     justify-content: space-between;
 }

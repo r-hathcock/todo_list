@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createProjectCard\", function() { return createProjectCard; });\n/* harmony import */ var _project_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./project-list */ \"./src/project-list.js\");\n/* harmony import */ var _task_page_load__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./task-page-load */ \"./src/task-page-load.js\");\n/* harmony import */ var _delete_project__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./delete-project */ \"./src/delete-project.js\");\n\n\n\n\nconst createProjectCard = (listIndex) => {\n    const mainProjectsNode = document.getElementById('projects-main');\n    const projectCardContainer = document.getElementById('project-card-container');\n    let projectList = Object(_project_list__WEBPACK_IMPORTED_MODULE_0__[\"retrieveProjectListLS\"])();\n    \n    let projectCard = document.createElement('div');\n    projectCard.setAttribute('class', 'project-cards');\n    projectCard.setAttribute('data-id', listIndex);\n    projectCard.addEventListener('click', function() {\n        if (event.target.getAttribute('class') === 'project-card-del-btn') \n            Object(_delete_project__WEBPACK_IMPORTED_MODULE_2__[\"deleteProject\"])();\n        else\n            Object(_task_page_load__WEBPACK_IMPORTED_MODULE_1__[\"loadTaskPage\"])();\n    });\n\n    let projectCardName = document.createElement('div');\n    projectCardName.setAttribute('class', 'project-name');\n    projectCardName.innerText = projectList[listIndex].name;\n    projectCard.appendChild(projectCardName);\n\n    let projectCardDeleteBtn = document.createElement('button');\n    projectCardDeleteBtn.setAttribute('class', 'project-card-del-btn');\n    projectCardDeleteBtn.innerText = 'Delete';\n    projectCard.appendChild(projectCardDeleteBtn);\n\n    projectCardContainer.appendChild(projectCard);\n    mainProjectsNode.appendChild(projectCardContainer);\n}\n\n\n\n//# sourceURL=webpack:///./src/create-project-card.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createProjectCard\", function() { return createProjectCard; });\n/* harmony import */ var _project_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./project-list */ \"./src/project-list.js\");\n/* harmony import */ var _page_load__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-load */ \"./src/page-load.js\");\n/* harmony import */ var _delete_project__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./delete-project */ \"./src/delete-project.js\");\n\n\n\n\nconst createProjectCard = (listIndex) => {\n    const mainProjectsNode = document.getElementById('projects-main');\n    const projectCardContainer = document.getElementById('project-card-container');\n    let projectList = Object(_project_list__WEBPACK_IMPORTED_MODULE_0__[\"retrieveProjectListLS\"])();\n    \n    let projectCard = document.createElement('div');\n    projectCard.setAttribute('class', 'project-cards');\n    projectCard.setAttribute('data-id', listIndex);\n    projectCard.addEventListener('click', function() {\n        if (event.target.getAttribute('class') === 'project-card-del-btn') \n            Object(_delete_project__WEBPACK_IMPORTED_MODULE_2__[\"deleteProject\"])();\n        else\n            Object(_page_load__WEBPACK_IMPORTED_MODULE_1__[\"loadTaskPage\"])();\n    });\n\n    let projectCardName = document.createElement('div');\n    projectCardName.setAttribute('class', 'project-name');\n    projectCardName.innerText = projectList[listIndex].name;\n    projectCard.appendChild(projectCardName);\n\n    let projectCardDeleteBtn = document.createElement('button');\n    projectCardDeleteBtn.setAttribute('class', 'project-card-del-btn');\n    projectCardDeleteBtn.innerText = 'Delete';\n    projectCard.appendChild(projectCardDeleteBtn);\n\n    projectCardContainer.appendChild(projectCard);\n    mainProjectsNode.appendChild(projectCardContainer);\n}\n\n\n\n//# sourceURL=webpack:///./src/create-project-card.js?");
 
 /***/ }),
 
@@ -118,7 +118,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _projects_page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects-page-load */ \"./src/projects-page-load.js\");\n\n\nObject(_projects_page_load__WEBPACK_IMPORTED_MODULE_0__[\"loadProjectPage\"])();\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-load */ \"./src/page-load.js\");\n\n\nObject(_page_load__WEBPACK_IMPORTED_MODULE_0__[\"loadProjectPage\"])();\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/page-load.js":
+/*!**************************!*\
+  !*** ./src/page-load.js ***!
+  \**************************/
+/*! exports provided: loadProjectPage, loadTaskPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadProjectPage\", function() { return loadProjectPage; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadTaskPage\", function() { return loadTaskPage; });\n/* harmony import */ var _projects_card_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects-card-load */ \"./src/projects-card-load.js\");\n/* harmony import */ var _project_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project-modal */ \"./src/project-modal.js\");\n\n\n\n// renders main home page to display title and projects\nconst loadProjectPage = () => {\n    let pageTitle = document.createElement('h1');\n    pageTitle.innerText = 'ToDo List';\n\n    let projectsTitle = document.createElement('h2');\n    projectsTitle.innerText = 'Projects';\n\n    // loads modal to retrieve user input\n    let projectsAddButton = document.createElement('button');\n    projectsAddButton.setAttribute('class', 'add-btn');\n    projectsAddButton.setAttribute('id', 'projects-add-btn');\n    projectsAddButton.addEventListener('click', _project_modal__WEBPACK_IMPORTED_MODULE_1__[\"projectModal\"]);\n    projectsAddButton.innerText = '+';\n    \n    // append elements to main node\n    let projectsTitleContainer = document.createElement('div');\n    projectsTitleContainer.appendChild(projectsTitle);\n    projectsTitleContainer.appendChild(projectsAddButton);\n    projectsTitleContainer.setAttribute('id', 'projects-title');\n\n    let projectCardsContainer = document.createElement('div');\n    projectCardsContainer.setAttribute('id', 'project-card-container');\n\n    let projectsMainContainer = document.createElement('div');\n    projectsMainContainer.appendChild(pageTitle);\n    projectsMainContainer.appendChild(projectsTitleContainer);\n    projectsMainContainer.appendChild(projectCardsContainer);\n    projectsMainContainer.setAttribute('id', 'projects-main');\n\n    const mainNode = document.getElementById('main-content');\n    mainNode.appendChild(projectsMainContainer);\n\n    // render list of projects\n    Object(_projects_card_load__WEBPACK_IMPORTED_MODULE_0__[\"loadProjectCards\"])();\n}\n\n// renders task page to display chosen project's task list\nconst loadTaskPage = () => {\n    const mainNode = document.getElementById('main-content');\n\n    // clear current page contents\n    while (mainNode.firstChild) {\n        mainNode.firstChild.remove();\n    }\n\n    let pageTitle = document.createElement('h1');\n    pageTitle.innerText = 'ToDo List';\n\n    let taskTitle = document.createElement('h2');\n    taskTitle.innerText = 'Tasks';\n\n    // loads modal to retrieve user input\n    let taskAddButton = document.createElement('button');\n    taskAddButton.setAttribute('class', 'add-btn');\n    taskAddButton.setAttribute('id', 'task-add-btn');\n    taskAddButton.addEventListener('click', _project_modal__WEBPACK_IMPORTED_MODULE_1__[\"projectModal\"]);\n    taskAddButton.innerText = '+';\n    \n    // append elements to main node\n    let taskTitleContainer = document.createElement('div');\n    taskTitleContainer.appendChild(taskTitle);\n    taskTitleContainer.appendChild(taskAddButton);\n    taskTitleContainer.setAttribute('id', 'task-title');\n\n    let taskCardsContainer = document.createElement('div');\n    taskCardsContainer.setAttribute('id', 'task-card-container');\n\n    let taskMainContainer = document.createElement('div');\n    taskMainContainer.appendChild(pageTitle);\n    taskMainContainer.appendChild(taskTitleContainer);\n    taskMainContainer.appendChild(taskCardsContainer);\n    taskMainContainer.setAttribute('id', 'task-main');\n\n    // append all content to main container\n    mainNode.appendChild(taskMainContainer);\n\n    // render list of tasks\n    Object(_projects_card_load__WEBPACK_IMPORTED_MODULE_0__[\"loadProjectCards\"])();\n}\n\n\n\n//# sourceURL=webpack:///./src/page-load.js?");
 
 /***/ }),
 
@@ -170,18 +182,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/projects-page-load.js":
-/*!***********************************!*\
-  !*** ./src/projects-page-load.js ***!
-  \***********************************/
-/*! exports provided: loadProjectPage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadProjectPage\", function() { return loadProjectPage; });\n/* harmony import */ var _projects_card_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects-card-load */ \"./src/projects-card-load.js\");\n/* harmony import */ var _project_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project-modal */ \"./src/project-modal.js\");\n\n\n\n// renders main home page to display title and projects\nconst loadProjectPage = () => {\n    let pageTitle = document.createElement('h1');\n    pageTitle.innerText = 'ToDo List';\n\n    let projectsTitle = document.createElement('h2');\n    projectsTitle.innerText = 'Projects';\n\n    // loads modal to retrieve user input\n    let projectsAddButton = document.createElement('button');\n    projectsAddButton.setAttribute('class', 'add-btn');\n    projectsAddButton.setAttribute('id', 'projects-add-btn');\n    projectsAddButton.addEventListener('click', _project_modal__WEBPACK_IMPORTED_MODULE_1__[\"projectModal\"]);\n    projectsAddButton.innerText = '+';\n    \n    // append elements to main node\n    let projectsTitleContainer = document.createElement('div');\n    projectsTitleContainer.appendChild(projectsTitle);\n    projectsTitleContainer.appendChild(projectsAddButton);\n    projectsTitleContainer.setAttribute('id', 'projects-title');\n\n    let projectCardsContainer = document.createElement('div');\n    projectCardsContainer.setAttribute('id', 'project-card-container');\n\n    let projectsMainContainer = document.createElement('div');\n    projectsMainContainer.appendChild(pageTitle);\n    projectsMainContainer.appendChild(projectsTitleContainer);\n    projectsMainContainer.appendChild(projectCardsContainer);\n    projectsMainContainer.setAttribute('id', 'projects-main');\n\n    const mainNode = document.getElementById('main-content');\n    mainNode.appendChild(projectsMainContainer);\n\n    // render list of projects\n    Object(_projects_card_load__WEBPACK_IMPORTED_MODULE_0__[\"loadProjectCards\"])();\n}\n\n\n\n//# sourceURL=webpack:///./src/projects-page-load.js?");
-
-/***/ }),
-
 /***/ "./src/projects.js":
 /*!*************************!*\
   !*** ./src/projects.js ***!
@@ -191,18 +191,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Project\", function() { return Project; });\n// project object to store multiple tasks\nfunction Project (name, id) {\n    this.taskList = [];\n    this.name = name;\n    this.id = id;\n};\n\n\n\n//# sourceURL=webpack:///./src/projects.js?");
-
-/***/ }),
-
-/***/ "./src/task-page-load.js":
-/*!*******************************!*\
-  !*** ./src/task-page-load.js ***!
-  \*******************************/
-/*! exports provided: loadTaskPage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadTaskPage\", function() { return loadTaskPage; });\n// displays tasklist for project that was selected\nconst loadTaskPage = () => {\n    let projectIndex = event.target.getAttribute('data-id');\n\n    // clear page content\n    const mainContentContainer = document.getElementById('main-content');\n    while (mainContentContainer.firstChild) {\n        mainContentContainer.firstChild.remove();\n    }\n}\n\n\n\n\n//# sourceURL=webpack:///./src/task-page-load.js?");
 
 /***/ })
 

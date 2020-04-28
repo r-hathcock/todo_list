@@ -1,5 +1,5 @@
 import {retrieveProjectListLS} from './project-list';
-import {loadTaskPage} from './task-page-load';
+import {loadTaskPage} from './page-load';
 import {deleteProject} from './delete-project';
 
 const createProjectCard = (listIndex) => {

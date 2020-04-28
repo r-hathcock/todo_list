@@ -1,4 +1,4 @@
-import {loadProjectPage} from './projects-page-load';
+import {loadProjectPage} from './page-load';
 
 loadProjectPage();
 

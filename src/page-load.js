@@ -38,4 +38,48 @@ const loadProjectPage = () => {
     loadProjectCards();
 }
 
-export {loadProjectPage};
+// renders task page to display chosen project's task list
+const loadTaskPage = () => {
+    const mainNode = document.getElementById('main-content');
+
+    // clear current page contents
+    while (mainNode.firstChild) {
+        mainNode.firstChild.remove();
+    }
+
+    let pageTitle = document.createElement('h1');
+    pageTitle.innerText = 'ToDo List';
+
+    let taskTitle = document.createElement('h2');
+    taskTitle.innerText = 'Tasks';
+
+    // loads modal to retrieve user input
+    let taskAddButton = document.createElement('button');
+    taskAddButton.setAttribute('class', 'add-btn');
+    taskAddButton.setAttribute('id', 'task-add-btn');
+    taskAddButton.addEventListener('click', projectModal);
+    taskAddButton.innerText = '+';
+    
+    // append elements to main node
+    let taskTitleContainer = document.createElement('div');
+    taskTitleContainer.appendChild(taskTitle);
+    taskTitleContainer.appendChild(taskAddButton);
+    taskTitleContainer.setAttribute('id', 'task-title');
+
+    let taskCardsContainer = document.createElement('div');
+    taskCardsContainer.setAttribute('id', 'task-card-container');
+
+    let taskMainContainer = document.createElement('div');
+    taskMainContainer.appendChild(pageTitle);
+    taskMainContainer.appendChild(taskTitleContainer);
+    taskMainContainer.appendChild(taskCardsContainer);
+    taskMainContainer.setAttribute('id', 'task-main');
+
+    // append all content to main container
+    mainNode.appendChild(taskMainContainer);
+
+    // render list of tasks
+    loadProjectCards();
+}
+
+export {loadProjectPage, loadTaskPage};
