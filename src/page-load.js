@@ -1,5 +1,6 @@
-import {loadProjectCards} from './projects-card-load';
+import {loadProjectCards, loadTaskCards} from './load-cards';
 import {projectModal} from './project-modal';
+import {retrieveProjectListLS, updateProjectListLS} from './project-list';
 
 // renders main home page to display title and projects
 const loadProjectPage = () => {
@@ -39,8 +40,10 @@ const loadProjectPage = () => {
 }
 
 // renders task page to display chosen project's task list
-const loadTaskPage = () => {
+const loadTaskPage = (projectId) => {
     const mainNode = document.getElementById('main-content');
+    let projectList = retrieveProjectListLS();
+    let currentProjectName = projectList[projectId].name;
 
     // clear current page contents
     while (mainNode.firstChild) {
@@ -51,7 +54,7 @@ const loadTaskPage = () => {
     pageTitle.innerText = 'ToDo List';
 
     let taskTitle = document.createElement('h2');
-    taskTitle.innerText = 'Tasks';
+    taskTitle.innerText = currentProjectName + ' Tasks';
 
     // loads modal to retrieve user input
     let taskAddButton = document.createElement('button');
@@ -78,8 +81,14 @@ const loadTaskPage = () => {
     // append all content to main container
     mainNode.appendChild(taskMainContainer);
 
+
+    // ***pushes task into task list***
+    projectList[projectId].taskList.push("testing");
+    updateProjectListLS(projectList);
+    console.log(projectList[projectId].taskList);
+
     // render list of tasks
-    loadProjectCards();
+    loadTaskCards(projectId);
 }
 
 export {loadProjectPage, loadTaskPage};

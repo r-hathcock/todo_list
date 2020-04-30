@@ -14,7 +14,7 @@ const createProjectCard = (listIndex) => {
         if (event.target.getAttribute('class') === 'project-card-del-btn') 
             deleteProject();
         else
-            loadTaskPage();
+            loadTaskPage(listIndex);
     });
 
     let projectCardName = document.createElement('div');
@@ -31,4 +31,34 @@ const createProjectCard = (listIndex) => {
     mainProjectsNode.appendChild(projectCardContainer);
 }
 
-export {createProjectCard};
+const createTaskCard = (projectId) => {
+    const mainTaskNode = document.getElementById('task-main');
+    const taskCardContainer = document.getElementById('task-card-container');
+    let projectList = retrieveProjectListLS();
+    console.log(projectList);
+    
+    let taskCard = document.createElement('div');
+    taskCard.setAttribute('class', 'task-cards');
+    taskCard.setAttribute('data-id', projectId);
+    taskCard.addEventListener('click', function() {
+        if (event.target.getAttribute('class') === 'project-card-del-btn') 
+            deleteProject();
+        else
+            loadTaskPage(listIndex);
+    });
+
+    let taskCardName = document.createElement('div');
+    taskCardName.setAttribute('class', 'task-name');
+    taskCardName.innerText = projectList[projectId].name;
+    taskCard.appendChild(taskCardName);
+
+    let taskCardDeleteBtn = document.createElement('button');
+    taskCardDeleteBtn.setAttribute('class', 'task-card-del-btn');
+    taskCardDeleteBtn.innerText = 'Delete';
+    taskCard.appendChild(taskCardDeleteBtn);
+
+    taskCardContainer.appendChild(taskCard);
+    mainTaskNode.appendChild(taskCardContainer);
+}
+
+export {createProjectCard, createTaskCard};

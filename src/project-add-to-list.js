@@ -1,6 +1,6 @@
 import {Project} from './projects';
 import {updateProjectListLS, retrieveProjectListLS} from './project-list';
-import {loadProjectCards} from './projects-card-load';
+import {loadProjectCards} from './load-cards';
 
 // creates new project object and pushes to list
 const addProjectToList = (titleInput) => {

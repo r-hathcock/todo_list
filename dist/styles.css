@@ -28,10 +28,15 @@ h1 {
 .add-btn:hover {
     cursor: pointer;
 }
-.project-cards {
+.project-cards,
+.task-cards {
     width: 550px;
     height: 25px;
     border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 5px;
 }
 .modal {
     display: none;
@@ -60,23 +65,21 @@ h1 {
 #project-form {
     text-align: center;
 }
-.project-cards {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    margin: 5px;
-}
-.project-cards:hover {
+.project-cards:hover,
+.task-cards:hover {
     cursor: pointer;
     background-color: grey;
 }
-.project-name {
+.project-name,
+.task-name {
     font-size: 25px;
 }
-.project-card-del-btn {
+.project-card-del-btn,
+.task-card-del-btn {
     width: 40px;
     height: 40px;
 }
-.project-card-del-btn:hover {
+.project-card-del-btn:hover,
+.task-card-del-btn:hover {
     cursor: pointer;
 }

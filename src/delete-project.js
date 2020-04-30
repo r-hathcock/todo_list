@@ -1,5 +1,5 @@
 import {retrieveProjectListLS, updateProjectListLS} from './project-list';
-import {loadProjectCards} from './projects-card-load';
+import {loadProjectCards} from './load-cards';
 
 const deleteProject = () => {
     let projectList = retrieveProjectListLS();
