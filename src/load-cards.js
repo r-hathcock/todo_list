@@ -28,7 +28,7 @@ const loadTaskCards = (projectId) => {
     
     // create and append cards 
     for (let i = 0; i < projectList[projectId].taskList.length; i++) {
-        createTaskCard(i);
+        createTaskCard(projectId, i);
     }  
 }
 

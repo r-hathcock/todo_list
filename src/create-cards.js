@@ -1,6 +1,6 @@
 import {retrieveProjectListLS} from './project-list';
 import {loadTaskPage} from './page-load';
-import {deleteProject} from './delete-project';
+import {deleteProject, deleteTask} from './delete-card';
 
 const createProjectCard = (listIndex) => {
     const mainProjectsNode = document.getElementById('projects-main');
@@ -31,7 +31,7 @@ const createProjectCard = (listIndex) => {
     mainProjectsNode.appendChild(projectCardContainer);
 }
 
-const createTaskCard = (projectId) => {
+const createTaskCard = (projectId, taskId) => {
     const mainTaskNode = document.getElementById('task-main');
     const taskCardContainer = document.getElementById('task-card-container');
     let projectList = retrieveProjectListLS();
@@ -39,17 +39,17 @@ const createTaskCard = (projectId) => {
     
     let taskCard = document.createElement('div');
     taskCard.setAttribute('class', 'task-cards');
-    taskCard.setAttribute('data-id', projectId);
+    taskCard.setAttribute('data-id', taskId);
     taskCard.addEventListener('click', function() {
-        if (event.target.getAttribute('class') === 'project-card-del-btn') 
-            deleteProject();
+        if (event.target.getAttribute('class') === 'task-card-del-btn') 
+            deleteTask(projectId, taskId);
         else
             loadTaskPage(listIndex);
-    });
+    }); 
 
     let taskCardName = document.createElement('div');
     taskCardName.setAttribute('class', 'task-name');
-    taskCardName.innerText = projectList[projectId].name;
+    taskCardName.innerText = projectList[projectId].taskList[taskId];
     taskCard.appendChild(taskCardName);
 
     let taskCardDeleteBtn = document.createElement('button');

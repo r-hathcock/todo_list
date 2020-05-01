@@ -11,10 +11,10 @@
     [x] prompt user when deleting
 [] load task page
     [x] load task page
-    [] render task cards
+    [x] render task cards
     [] add task button
     [] add task modal
-    [] delete task button
+    [x] delete task button
     [] back btn(load projects page)
 [] styles
 
