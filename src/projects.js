@@ -1,6 +1,6 @@
 // project object to store multiple tasks
 function Project (name, id) {
-    this.taskList = ["testing", "hello"];
+    this.taskList = [];
     this.name = name;
     this.id = id;
 };

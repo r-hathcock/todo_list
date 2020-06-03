@@ -35,7 +35,6 @@ const createTaskCard = (projectId, taskId) => {
     const mainTaskNode = document.getElementById('task-main');
     const taskCardContainer = document.getElementById('task-card-container');
     let projectList = retrieveProjectListLS();
-    console.log(projectList);
     
     let taskCard = document.createElement('div');
     taskCard.setAttribute('class', 'task-cards');

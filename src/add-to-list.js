@@ -1,6 +1,6 @@
 import {Project} from './projects';
 import {updateProjectListLS, retrieveProjectListLS} from './project-list';
-import {loadProjectCards} from './load-cards';
+import {loadProjectCards, loadTaskCards} from './load-cards';
 
 // creates new project object and pushes to list
 const addProjectToList = (titleInput) => {
@@ -11,4 +11,11 @@ const addProjectToList = (titleInput) => {
     loadProjectCards();
 }
 
-export {addProjectToList};
+const addTaskToProject = (titleInput, projectId) => {
+    let projectList = retrieveProjectListLS();
+    projectList[projectId].taskList.push(titleInput.value);
+    updateProjectListLS(projectList);
+    loadTaskCards(projectId);
+}
+
+export {addProjectToList, addTaskToProject};
