@@ -42,8 +42,6 @@ const createTaskCard = (projectId, taskId) => {
     taskCard.addEventListener('click', function() {
         if (event.target.getAttribute('class') === 'task-card-del-btn') 
             deleteTask(projectId, taskId);
-        else
-            loadTaskPage(listIndex);
     }); 
 
     let taskCardName = document.createElement('div');

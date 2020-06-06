@@ -53,10 +53,16 @@ const loadTaskPage = (projectId) => {
     let pageTitle = document.createElement('h1');
     pageTitle.innerText = 'ToDo List';
 
+
     let taskTitle = document.createElement('h2');
     taskTitle.innerText = currentProject.name + ' Tasks';
 
     // loads modal to retrieve user input
+    let taskPageBackBtn = document.createElement('button');
+    taskPageBackBtn.setAttribute('id', 'task-page-back-btn');
+    taskPageBackBtn.innerText = '<-';
+    taskPageBackBtn.addEventListener('click', function(){location.reload()} );
+
     let taskAddButton = document.createElement('button');
     taskAddButton.setAttribute('class', 'add-btn');
     taskAddButton.setAttribute('id', 'task-add-btn');
@@ -65,6 +71,7 @@ const loadTaskPage = (projectId) => {
     
     // append elements to main node
     let taskTitleContainer = document.createElement('div');
+    taskTitleContainer.appendChild(taskPageBackBtn);
     taskTitleContainer.appendChild(taskTitle);
     taskTitleContainer.appendChild(taskAddButton);
     taskTitleContainer.setAttribute('id', 'task-title');

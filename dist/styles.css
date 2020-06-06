@@ -19,13 +19,15 @@ h1 {
     display: flex;
     justify-content: space-between;
 }
-.add-btn {
+.add-btn,
+#task-page-back-btn {
     width: 40px;
     height: 40px;
     font-size: 35px;
     text-align: center;
 }
-.add-btn:hover {
+.add-btn:hover,
+#task-page-back-btn:hover {
     cursor: pointer;
 }
 .project-cards,

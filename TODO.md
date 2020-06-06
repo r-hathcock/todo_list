@@ -12,8 +12,8 @@
 [] load task page
     [x] load task page
     [x] render task cards
-    [] add task button
-    [] add task modal
+    [x] add task button
+    [x] add task modal
     [x] delete task button
     [] back btn(load projects page)
 [] styles
