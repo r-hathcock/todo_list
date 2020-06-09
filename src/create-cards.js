@@ -24,7 +24,7 @@ const createProjectCard = (listIndex) => {
 
     let projectCardDeleteBtn = document.createElement('button');
     projectCardDeleteBtn.setAttribute('class', 'project-card-del-btn');
-    projectCardDeleteBtn.innerText = 'Delete';
+    projectCardDeleteBtn.innerText = 'x';
     projectCard.appendChild(projectCardDeleteBtn);
 
     projectCardContainer.appendChild(projectCard);
@@ -51,7 +51,7 @@ const createTaskCard = (projectId, taskId) => {
 
     let taskCardDeleteBtn = document.createElement('button');
     taskCardDeleteBtn.setAttribute('class', 'task-card-del-btn');
-    taskCardDeleteBtn.innerText = 'Delete';
+    taskCardDeleteBtn.innerText = 'X';
     taskCard.appendChild(taskCardDeleteBtn);
 
     taskCardContainer.appendChild(taskCard);

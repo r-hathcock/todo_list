@@ -11,7 +11,7 @@ h1 {
 #projects-main,
 #task-main {
     display: inline-block;
-    width: 550px;
+    width: 600px;
     height: auto;
 }
 #projects-title,
@@ -23,12 +23,27 @@ h1 {
 #task-page-back-btn {
     width: 40px;
     height: 40px;
-    font-size: 35px;
-    text-align: center;
+    font-size: 35px;   
+    line-height: 35px;
+    padding: 0;
 }
 .add-btn:hover,
 #task-page-back-btn:hover {
     cursor: pointer;
+}
+#task-page-back-btn {
+    font-size: 30px;
+}
+.project-card-del-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;   
+    line-height: 30px;
+    padding: 0;
+}
+#project-card-container {
+    padding: 0;
+    border: 1px solid black;
 }
 .project-cards,
 .task-cards {
@@ -36,6 +51,7 @@ h1 {
     height: 25px;
     border: 2px solid black;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 15px;
     margin: 5px;
